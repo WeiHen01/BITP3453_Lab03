@@ -2,6 +2,10 @@
 
 A Flutter project for BITP3453 Lab Week 3
 
+In this lab session, we will try out to create and display certain widgets such icon, image and input text using layout elements - List and ListView.Builder
+
+A project named Daily Expenses is built.
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
