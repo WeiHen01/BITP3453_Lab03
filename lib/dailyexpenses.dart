@@ -72,7 +72,6 @@ class _ExpenseListState extends State<ExpenseList> {
      // calculation
      total = total - cost;
 
-
      totalController.text = total.toString();
      expenses.removeAt(index);
 
