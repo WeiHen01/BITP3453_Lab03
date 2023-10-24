@@ -43,11 +43,17 @@ class _ExpenseListState extends State<ExpenseList> {
 
    if(description.isNotEmpty && amount.isNotEmpty){
      setState(() {
+
+       // sum up the total cost spend
        total = double.parse(amount) + total;
+
+       // adding the new items into the List
        expenses.add(Expense(description, amount));
+
        // display the output in text field
        totalController.text = total.toStringAsFixed(1);
 
+       // clear the text fields
        descriptionController.clear();
        amountController.clear();
 
@@ -60,11 +66,17 @@ class _ExpenseListState extends State<ExpenseList> {
  void _removeExpense(int index){
    setState(() {
 
+     // variable to convert input from text field to double datatype
      double cost = double.parse(expenses[index].amount);
+
+     // calculation
      total = total - cost;
+
+
      totalController.text = total.toString();
      expenses.removeAt(index);
 
+     // if there's no items in the List, set default total spend is 0
      if(expenses.length == 0){
        totalController.text = '0.0';
      }
@@ -105,6 +117,7 @@ class _ExpenseListState extends State<ExpenseList> {
             padding: const EdgeInsets.all(16.0),
             child: TextField(
               controller: totalController,
+              // enabled: false, //disable from editing text in text field
               decoration: InputDecoration(
                 labelText: 'Total Spend(RM)',
               ),
